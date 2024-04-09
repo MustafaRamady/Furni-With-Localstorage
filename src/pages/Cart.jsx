@@ -105,10 +105,12 @@ export default function Cart() {
                     </Button>
                     <DeleteIcon
                       sx={{ color: "red", cursor: "pointer" }}
-                      onClick={() => {
-                        fetch(`http://localhost:3000/myData/${ele.id}`, {
-                          method: "DELETE",
-                        });
+                      onClick={(i) => {
+                        // fetch(`http://localhost:3000/myData/${ele.id}`, {
+                        //   method: "DELETE",
+                        // });
+                        myData.splice(i, 1);
+                        window.localStorage.Product = JSON.stringify(myData);
                       }}
                     />
                   </CardActions>
